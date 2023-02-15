@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: docker-test-service
+spec:
+  containers:
+    - name: docker-test-service
+      image: aa061872/docker-test-service
+      ports:
+        - containerPort: 9191
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  docker-test-service:
+    image: aa061872/docker-test-service:latest
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+    ports:
+      - "9191:9191"
